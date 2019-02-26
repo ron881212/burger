@@ -1,0 +1,35 @@
+<div class="jumbotron jumbotron-fluid text-center">
+    <div class="container">
+        <h1 class="display-4">Order Your burger</h1>
+        <p class="lead">Type in the burger you want to eat. Click devoured to eat the burger.</p>
+    </div>
+</div>
+
+<ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    {{> burgers/burger-block devoured=true}}
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    {{> burgers/burger-block devoured=false}}
+    {{/if}}
+    {{/each}}
+</ul>
+
+<div class="text-center m-0">
+    <h2>Order here</h2>
+    <form class="create-form">
+
+        <div class="form-group">
+            <label for="ca">Burger Name:</label>
+            <input type="text" id="ca" name="name">
+            <button class="order btn btn-primary" type="submit">Order</button>
+        </div>
+</div>
+
+</form>

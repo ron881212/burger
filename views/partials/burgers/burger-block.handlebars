@@ -1,6 +1,11 @@
 <li class="list-group-item">
 	{{burger_name}}
-	<button class="eat-burger btn btn-danger mt-3 float-right" data-id="{{this.id}}" data-eaten="{{devoured}}">EAT!</button>
+	{{#if devoured}}
+    	<button class="eat-burger btn btn-danger mt-3 float-right" data-id="{{this.id}}" data-eaten="{{devoured}}">EAT!</button>
+	{{/if}}
+	{{#else}}
+		
+	{{/else}}
 </li>
 
 {{!-- responsible for the button --}}
